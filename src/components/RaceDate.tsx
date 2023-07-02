@@ -10,11 +10,17 @@ interface Props {
 }
 
 const RaceDateComponent = ({ dateTime }: Props) => {
-  const date = DateTime.fromISO(`${dateTime.date}T${dateTime.time}`).toFormat('dd/MM/yyyy HH:mm');
+  const date = DateTime.fromISO(`${dateTime.date}T${dateTime.time}`);
+  const formattedDate = date.toFormat('dd/MM/yyyy HH:mm');
+  const relativeDate = date.toRelative();
 
   return (
     <p className="text-sm text-muted-foreground">
-      {date}
+      {formattedDate}
+      {' '}
+      (
+      {relativeDate}
+      )
     </p>
   );
 };

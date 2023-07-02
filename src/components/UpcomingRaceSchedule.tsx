@@ -24,6 +24,9 @@ export const UpcomingRaceRaceSchedule = ({ race }: Props) => (
         round
         {' '}
         {race.round}
+        .
+        {' '}
+        {race.Circuit.circuitName}
       </CardDescription>
       <CardContent className="px-0 py-0 pt-4">
         <Stepper className="flex flex-col gap-6 border-l pl-4 relative">
