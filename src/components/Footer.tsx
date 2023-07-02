@@ -31,6 +31,14 @@ export const Footer = () => (
           >
             GitHub
           </a>
+          . Components by
+          {' '}
+          <a
+            className="font-medium underline underline-offset-4"
+            href="https://github.com/shadcn"
+          >
+            shadcn
+          </a>
           .
         </p>
       </div>
