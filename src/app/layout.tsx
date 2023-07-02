@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google';
 import { type PropsWithChildren } from 'react';
 
+import { ThemeProvider } from '@/components/ThemeProvider';
+
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,7 +17,9 @@ const RootLayout = ({
 }: PropsWithChildren) => (
   <html lang="en">
     <body className={inter.className}>
-      {children}
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        {children}
+      </ThemeProvider>
     </body>
   </html>
 );
