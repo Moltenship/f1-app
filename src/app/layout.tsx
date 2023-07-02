@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import { type PropsWithChildren } from 'react';
 
 import './globals.css';
 
@@ -11,9 +12,7 @@ export const metadata = {
 
 const RootLayout = ({
   children,
-}: {
-  children: React.ReactNode;
-}) => (
+}: PropsWithChildren) => (
   <html lang="en">
     <body className={inter.className}>
       {children}
