@@ -1,3 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "@moltenship/eslint-config-react"]
+  "extends": ["next/core-web-vitals", "@moltenship/eslint-config-react"],
+  "ignorePatterns": ["generatedTypes.ts"]
 }
