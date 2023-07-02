@@ -75,3 +75,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+  .step::before {
+    content: counter(step);
+    @apply items-center justify-center absolute inline-flex h-6 w-6 rounded-full bg-muted -ml-7 -mt-1
+  }
+}

@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  swcMinify: false,
-  sourcemaps: true,
-}
+const nextConfig = {}
 
 module.exports = nextConfig

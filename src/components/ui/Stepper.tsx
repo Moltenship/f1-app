@@ -22,9 +22,11 @@ interface StepProps {
   readonly step?: number;
 }
 
+// TODO: Use js solution over `global.css` solution
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Step = ({ children, className, step = 1 }: PropsWithChildren<StepProps>) => (
   // eslint-disable-next-line max-len
-  <div className={cn(`flex flex-col gap-1 before:items-center before:justify-center before:absolute before:inline-flex before:h-6 before:w-6 before:rounded-full before:bg-muted before:-ml-7 before:-mt-1 before:content-['${step}']`, className)}>
+  <div className={cn(`flex flex-col gap-1 step`, className)}>
     {children}
   </div>
 );
