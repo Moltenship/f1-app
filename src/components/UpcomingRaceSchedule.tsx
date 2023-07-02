@@ -50,6 +50,12 @@ export const UpcomingRaceRaceSchedule = ({ race }: Props) => (
               <RaceDate dateTime={race.Sprint} />
             </div>
           )}
+          {race.Qualifying && (
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-medium leading-none">Qualifier</p>
+              <RaceDate dateTime={race.Qualifying} />
+            </div>
+          )}
           {race.date && race.time && (
             <div className="flex flex-col gap-1">
               <p className="text-sm font-medium leading-none">Race</p>
