@@ -1,10 +1,11 @@
 import { type Circuit } from './circuit';
+import { type DateTime } from './dateTime';
 import { type RaceResult } from './raceResult';
 
 /**
  * Represents a Race.
  */
-export interface Race {
+export interface BaseRace {
 
   /** The circuit associated with the race. */
   readonly Circuit: Circuit;
@@ -14,9 +15,6 @@ export interface Race {
 
   /** The name of the race. (e.g., "Abu Dhabi Grand Prix") */
   readonly raceName: string;
-
-  /** The results of the race. */
-  readonly Results: readonly RaceResult[];
 
   /** The round number of the race. (e.g., "21") */
   readonly round: string;
@@ -29,4 +27,19 @@ export interface Race {
 
   /** The URL of the race. (e.g., "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix") */
   readonly url: string;
+}
+
+export interface Race extends BaseRace {
+
+  /** The results of the race. */
+  readonly Results: readonly RaceResult[];
+
+}
+
+export interface UpcomingRace extends BaseRace {
+  readonly FirstPractice: DateTime;
+  readonly Qualifying: DateTime;
+  readonly SecondPractice: DateTime;
+  readonly Sprint?: DateTime;
+  readonly ThirdPractice: DateTime;
 }

@@ -1,12 +1,12 @@
-import { type Race } from './race';
+import { type BaseRace } from './race';
 
 /**
  * Represents a race table.
  */
-export interface RaceTable {
+export interface RaceTable<T extends BaseRace> {
 
   /** The array of races in the race table. */
-  readonly Races: readonly Race[];
+  readonly Races: readonly T[];
 
   /** The round of the race table. Only returned if round parameter used. */
   readonly round?: string;
