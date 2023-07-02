@@ -1,14 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  redirects: async()=> {
-    return [
-      {
-        source: '/',
-        destination: '/next',
-        permanent: false
-      }
-    ]
-  }
+  swcMinify: false
 }
 
 module.exports = nextConfig
