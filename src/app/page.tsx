@@ -25,7 +25,7 @@ const Home = () => (
           <a href="/next">Next Race</a>
         </Button>
         <Button asChild variant="outline">
-          <a href="https://github.com/moltenship/f1-app">Github</a>
+          <a href="/last">Last Race</a>
         </Button>
       </div>
     </section>

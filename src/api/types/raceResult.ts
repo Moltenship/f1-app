@@ -1,5 +1,6 @@
 import { type Constructor } from './constructor';
 import { type Driver } from './driver';
+import { type FastestLap } from './fastestLap';
 
 /**
  * Represents a Result.
@@ -11,6 +12,9 @@ export interface RaceResult {
 
   /** The driver associated with the result. */
   readonly Driver: Driver;
+
+  /** The fastest lap done by driver. */
+  readonly FastestLap?: FastestLap;
 
   /** The starting grid position of the result. (e.g., "1") */
   readonly grid: string;

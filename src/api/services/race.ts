@@ -19,4 +19,9 @@ export namespace RaceService {
     const data = await api.get('/current/next.json').json<ApiResponse<RaceMRData<UpcomingRace>>>();
     return data.MRData.RaceTable.Races[0];
   }
+
+  export async function getLastRaceResults() {
+    const data = await api.get('/current/last/results.json').json<ApiResponse<RaceMRData<Race>>>();
+    return data.MRData.RaceTable.Races[0];
+  }
 }

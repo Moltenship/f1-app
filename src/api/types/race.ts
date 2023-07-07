@@ -32,7 +32,7 @@ export interface BaseRace {
 export interface Race extends BaseRace {
 
   /** The results of the race. */
-  readonly Results: readonly RaceResult[];
+  readonly Results: RaceResult[];
 
 }
 
