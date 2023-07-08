@@ -9,6 +9,10 @@ export const appPaths = [
   },
   {
     path: '/season/current/constructor-rating',
-    title: 'Current Season Constructor Rating',
+    title: 'Current Season Constructors Rating',
+  },
+  {
+    path: '/season/current/driver-rating',
+    title: 'Current Season Drivers Rating',
   },
 ] as const;

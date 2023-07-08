@@ -2,9 +2,9 @@ import { api } from '../api';
 import { type ApiResponse } from '../types/apiResponse';
 import { type StandingsMRData } from '../types/standingsMrData';
 
-export namespace ConstructorService {
-  export async function getConstructorsStandings(season: string) {
-    const data = await api.get(`/${season}/constructorStandings.json`).json<ApiResponse<StandingsMRData>>();
+export namespace DriverService {
+  export async function getDriversStandings(season: string) {
+    const data = await api.get(`/${season}/driverStandings.json`).json<ApiResponse<StandingsMRData>>();
     return data.MRData.StandingsTable.StandingsLists[0];
   }
 }

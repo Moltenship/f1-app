@@ -14,7 +14,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const standingInfo = await ConstructorService.getConstructorStandings(params.season);
+  const standingInfo = await ConstructorService.getConstructorsStandings(params.season);
 
   return {
     description: `Constructor standings for ${standingInfo.season} season.`,
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const ConstructorStandings = async({ params }: Props) => {
   const { season } = params;
-  const standingInfo = await ConstructorService.getConstructorStandings(season);
+  const standingInfo = await ConstructorService.getConstructorsStandings(season);
 
   return (
     <main className="md:container">
