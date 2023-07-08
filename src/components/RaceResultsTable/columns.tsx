@@ -1,21 +1,31 @@
 'use client';
 
 import { type ColumnDef, createColumnHelper } from '@tanstack/react-table';
-import { TimerIcon } from 'lucide-react';
+import { ArrowUpDownIcon, TimerIcon } from 'lucide-react';
 
 import { type FastestLap } from '@/api/types/fastestLap';
 import { type RaceResult } from '@/api/types/raceResult';
+import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
 const columnHelper = createColumnHelper<RaceResult>();
 
 export const columns = [
   columnHelper.accessor('position', {
-    header: 'Position',
+    header({ column }) {
+      return (
+        <Button
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          variant="ghost"
+        >
+          Position
+          <ArrowUpDownIcon className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   }),
   columnHelper.accessor('grid', {
-    // eslint-disable-next-line object-shorthand
-    cell: ctx => {
+    cell(ctx) {
       const position = Number(ctx.row.getValue<string>('position'));
       const gridPosition = Number(ctx.getValue<string>());
       const positionShift = gridPosition - position;
@@ -41,8 +51,7 @@ export const columns = [
     header: 'Team',
   }),
   columnHelper.accessor('FastestLap', {
-    // eslint-disable-next-line object-shorthand
-    cell: ctx => {
+    cell(ctx) {
       const fastestLap = ctx.getValue<FastestLap>();
       const { time } = fastestLap.Time;
       const { rank } = fastestLap;
