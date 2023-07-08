@@ -21,7 +21,7 @@ interface DataTableProps<TData, TValue> {
   readonly data: TData[];
 }
 
-export const RaceResultsTable = <TData, TValue>({
+export const DataTable = <TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) => {

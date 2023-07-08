@@ -1,5 +1,6 @@
 import { RaceService } from '@/api/services/race';
-import { columns, RaceResultsTable } from '@/components/RaceResultsTable';
+import { DataTable } from '@/components/DataTable';
+import { columns } from '@/components/RaceResultsTable';
 
 const LastRacePage = async() => {
   const lastRace = await RaceService.getLastRaceResults();
@@ -10,7 +11,7 @@ const LastRacePage = async() => {
         <h1 className="text-2xl font-semibold leading-none tracking-tight text-center">
           {lastRace.raceName}
         </h1>
-        <RaceResultsTable columns={columns} data={lastRace.Results} />
+        <DataTable columns={columns} data={lastRace.Results} />
       </div>
     </main>
   );
