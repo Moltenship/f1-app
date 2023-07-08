@@ -7,15 +7,15 @@ import { columns } from '@/components/RaceResultsTable';
 export async function generateMetadata(): Promise<Metadata> {
   const lastRace = await RaceService.getLastRaceResults();
   return {
-    description: `Results for latest race ${lastRace.raceName} season ${lastRace.season} round ${lastRace.round}`,
+    description: `${lastRace.raceName} results. Season ${lastRace.season}, round ${lastRace.round}`,
     openGraph: {
-      description: `Results for latest race ${lastRace.raceName} season ${lastRace.season} round ${lastRace.round}`,
+      description: `${lastRace.raceName} results. Season ${lastRace.season}, round ${lastRace.round}`,
       siteName: 'F1 App',
-      title: `Results for ${lastRace.raceName} — F1 App`,
+      title: `${lastRace.raceName} results — F1 App`,
       type: 'website',
       url: `https://f1-app-eight.vercel.app/last`,
     },
-    title: `Results for ${lastRace.raceName}`,
+    title: `${lastRace.raceName} results — F1 App`,
   };
 }
 
