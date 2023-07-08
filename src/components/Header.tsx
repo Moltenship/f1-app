@@ -1,8 +1,11 @@
 import Image from 'next/image';
 
+// eslint-disable-next-line perfectionist/sort-imports
+import { AppCommand } from './AppCommand';
+
 export const Header = () => (
   <header className="border-b">
-    <div className="container py-4 flex items-center">
+    <div className="container py-4 flex items-center justify-between">
       <a href="/">
         <div className="flex items-center gap-2 text-inherit">
           <Image
@@ -18,6 +21,7 @@ export const Header = () => (
           </h1>
         </div>
       </a>
+      <AppCommand />
     </div>
   </header>
 );
