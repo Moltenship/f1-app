@@ -12,7 +12,7 @@ export const appPaths = [
     title: 'Last Race Results',
   },
   {
-    path: '/season/current/standings/constructor',
+    path: '/season/current/standings/team',
     title: 'Current Season Constructors Standings',
   },
   {
