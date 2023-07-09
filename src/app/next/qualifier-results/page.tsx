@@ -1,7 +1,14 @@
+import { type Metadata } from 'next';
+
 import { QualifierService } from '@/api/services/qualifier';
 import { DataTable } from '@/components/DataTable';
 import { columns } from '@/components/QualifierResultsTable';
 import { TableHeading } from '@/components/ui/Table';
+
+export const metadata: Metadata = {
+  description: 'Results for current weekend qualifier',
+  title: 'Qualifier results — F1 App',
+};
 
 const QualifierResultsPage = async() => {
   const qualifierInfo = await QualifierService.getQualifyingResults('current', 'next');
