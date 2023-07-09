@@ -1,4 +1,5 @@
 import { RaceDate } from './RaceDate';
+import { ExternalLink } from 'lucide-react';
 
 import { type UpcomingRace } from '@/api/types/race';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -56,7 +57,14 @@ export const UpcomingRaceRaceSchedule = ({ race }: Props) => (
           )}
           {race.Qualifying && (
             <Step>
-              <p className="text-sm font-medium leading-none">Qualifier</p>
+              <a
+                className="underline underline-offset-4 text-sm font-medium leading-none flex items-center gap-2"
+                href="/next/qualifier-results"
+                title="See results"
+              >
+                Qualifier
+                <ExternalLink className="h-4 w-4" />
+              </a>
               <RaceDate dateTime={race.Qualifying} />
             </Step>
           )}

@@ -4,6 +4,10 @@ export const appPaths = [
     title: 'Upcoming Race Schedule',
   },
   {
+    path: '/next/qualifier-results',
+    title: 'Qualifying Results For Current Race',
+  },
+  {
     path: '/last',
     title: 'Last Race Results',
   },

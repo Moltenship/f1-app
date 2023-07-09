@@ -1,5 +1,6 @@
 import { type Circuit } from './circuit';
 import { type RaceDateTime } from './dateTime';
+import { type QualifyingResult } from './qualifyingResult';
 import { type RaceResult } from './raceResult';
 
 /**
@@ -34,6 +35,10 @@ export interface Race extends BaseRace {
   /** The results of the race. */
   readonly Results: RaceResult[];
 
+}
+
+export interface QualifyingRace extends BaseRace {
+  readonly QualifyingResults: QualifyingResult[];
 }
 
 export interface UpcomingRace extends BaseRace {
