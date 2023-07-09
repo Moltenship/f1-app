@@ -1,28 +1,17 @@
 'use client';
 
 import { type ColumnDef, createColumnHelper } from '@tanstack/react-table';
-import { ArrowUpDownIcon, TimerIcon } from 'lucide-react';
+import { TimerIcon } from 'lucide-react';
 
 import { type FastestLap } from '@/api/types/fastestLap';
 import { type RaceResult } from '@/api/types/raceResult';
-import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
 const columnHelper = createColumnHelper<RaceResult>();
 
 export const columns = [
   columnHelper.accessor('position', {
-    header({ column }) {
-      return (
-        <Button
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-          variant="ghost"
-        >
-          Position
-          <ArrowUpDownIcon className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
+    header: 'Position',
   }),
   columnHelper.accessor('grid', {
     cell(ctx) {

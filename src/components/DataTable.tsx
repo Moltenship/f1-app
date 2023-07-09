@@ -22,13 +22,15 @@ import {
 interface DataTableProps<TData, TValue> {
   readonly columns: ColumnDef<TData, TValue>[];
   readonly data: TData[];
+  readonly initialSortingState?: SortingState;
 }
 
 export const DataTable = <TData, TValue>({
   columns,
   data,
+  initialSortingState = [],
 }: DataTableProps<TData, TValue>) => {
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>(initialSortingState);
 
   const table = useReactTable({
     columns,
