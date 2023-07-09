@@ -102,6 +102,24 @@ const TableCaption = forwardRef<
 ));
 TableCaption.displayName = 'TableCaption';
 
+interface TableHeadingProps {
+  readonly description?: string;
+  readonly title: string;
+}
+
+const TableHeading = ({ description, title }: TableHeadingProps) => (
+  <div>
+    <h1 className="text-2xl font-semibold leading-none tracking-tight">
+      {title}
+    </h1>
+    {description && (
+      <p className="text-muted-foreground">
+        {description}
+      </p>
+    )}
+  </div>
+);
+
 export {
   Table,
   TableBody,
@@ -110,5 +128,6 @@ export {
   TableFooter,
   TableHead,
   TableHeader,
+  TableHeading,
   TableRow,
 };

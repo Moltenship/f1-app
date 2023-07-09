@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@moltenship/eslint-config-react':
-    specifier: ^1.1.1
-    version: 1.1.1(eslint@8.44.0)(typescript@5.1.6)
+    specifier: ^1.1.2
+    version: 1.1.2(eslint@8.44.0)(typescript@5.1.6)
   '@radix-ui/react-dialog':
     specifier: ^1.0.4
     version: 1.0.4(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
@@ -220,12 +220,12 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: false
 
-  /@moltenship/eslint-config-react@1.1.1(eslint@8.44.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-QvvKLuQpAjYQuzKEDiAB948bZ4iqfs43EseLs+nhmF4QZ/AszmuNvEhQrupuSuLdoN3zMPkse4VPdeiLhK8yMw==}
+  /@moltenship/eslint-config-react@1.1.2(eslint@8.44.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-WCkhAN1bJ4gNug4p1fTP+c+zfIRnmuKp7z1plYsGTjCFYTkFywxfz8VE9qxGocaC3negwd41FXBNMJKKea4jmQ==}
     peerDependencies:
       eslint: ^8.38.0
     dependencies:
-      '@moltenship/eslint-config-typescript': 1.1.1(eslint@8.44.0)(typescript@5.1.6)
+      '@moltenship/eslint-config-typescript': 1.1.2(eslint@8.44.0)(typescript@5.1.6)
       eslint: 8.44.0
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.44.0)
       eslint-plugin-react: 7.32.2(eslint@8.44.0)
@@ -238,8 +238,8 @@ packages:
       - typescript
     dev: false
 
-  /@moltenship/eslint-config-typescript@1.1.1(eslint@8.44.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-CUTu5sAkmA7fkKKHbX9OelheswtooyB+jw09/+MAI4RMuRKqEtOo+08YKcd5BhsuOdlSQ+wJcpR1Srmt3MjXwA==}
+  /@moltenship/eslint-config-typescript@1.1.2(eslint@8.44.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-R0SVsEzmm8dikgymCmuhJoa5Rt+PSgi/tV1qAnHyohJWk3gHSQCIdU/9c0BSw+bLTHt1JZ4yLPNoOadg9XWMpg==}
     peerDependencies:
       eslint: ^8.38.0
     dependencies:

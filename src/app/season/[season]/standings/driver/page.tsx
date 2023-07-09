@@ -4,14 +4,12 @@ import { DriverService } from '@/api/services/driver';
 import { type DriverStanding } from '@/api/types/driverStanding';
 import { DataTable } from '@/components/DataTable';
 import { columns } from '@/components/DriverStandingsTable';
+import { TableHeading } from '@/components/ui/Table';
+import { type PropsWithParams } from '@/lib/types/propsWithParams';
 
-interface Params {
-  readonly season: string;
-}
+import { type Params } from '../../params';
 
-interface Props {
-  readonly params: Params;
-}
+type Props = PropsWithParams<Params>;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const standingInfo = await DriverService.getDriversStandings(params.season);
@@ -34,16 +32,10 @@ const DriverStandings = async({ params }: Props) => {
   const standingInfo = await DriverService.getDriversStandings(season);
 
   return (
-    <main className="md:container">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-semibold leading-none tracking-tight text-center">
-          Season
-          {' '}
-          {standingInfo.season}
-        </h1>
-        <DataTable columns={columns} data={standingInfo.DriverStandings as DriverStanding[]} />
-      </div>
-    </main>
+    <>
+      <TableHeading description={`Driver standings for ${standingInfo.season} season.`} title="Standings" />
+      <DataTable columns={columns} data={standingInfo.DriverStandings as DriverStanding[]} />
+    </>
   );
 };
 

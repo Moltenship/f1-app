@@ -1,7 +1,5 @@
-import Image from 'next/image';
-
-// eslint-disable-next-line perfectionist/sort-imports
 import { AppCommand } from './AppCommand';
+import Image from 'next/image';
 
 export const Header = () => (
   <header className="border-b">

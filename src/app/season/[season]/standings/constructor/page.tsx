@@ -4,14 +4,13 @@ import { ConstructorService } from '@/api/services/constructor';
 import { type ConstructorStanding } from '@/api/types/constructorStanding';
 import { columns } from '@/components/ConstructorStandingsTable';
 import { DataTable } from '@/components/DataTable';
+import { TableHeading } from '@/components/ui/Table';
+import { type PropsWithParams } from '@/lib/types/propsWithParams';
 
-interface Params {
-  readonly season: string;
-}
+// eslint-disable-next-line import/order
+import { type Params } from '../../params';
 
-interface Props {
-  readonly params: Params;
-}
+type Props = PropsWithParams<Params>;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const standingInfo = await ConstructorService.getConstructorsStandings(params.season);
@@ -34,16 +33,10 @@ const ConstructorStandings = async({ params }: Props) => {
   const standingInfo = await ConstructorService.getConstructorsStandings(season);
 
   return (
-    <main className="md:container">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-semibold leading-none tracking-tight text-center">
-          Season
-          {' '}
-          {standingInfo.season}
-        </h1>
-        <DataTable columns={columns} data={standingInfo.ConstructorStandings as ConstructorStanding[]} />
-      </div>
-    </main>
+    <>
+      <TableHeading description={`Constructor standings for ${standingInfo.season} season.`} title="Standings" />
+      <DataTable columns={columns} data={standingInfo.ConstructorStandings as ConstructorStanding[]} />
+    </>
   );
 };
 
