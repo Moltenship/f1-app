@@ -15,7 +15,7 @@ export namespace RaceService {
     return data;
   }
 
-  export async function getUpcomingRace() {
+  export async function getUpcomingRace(): Promise<undefined | UpcomingRace> {
     const data = await api.get('/current/next.json').json<ApiResponse<RaceMRData<UpcomingRace>>>();
     return data.MRData.RaceTable.Races[0];
   }
