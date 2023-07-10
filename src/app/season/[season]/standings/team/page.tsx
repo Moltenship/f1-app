@@ -7,7 +7,6 @@ import { DataTable } from '@/components/DataTable';
 import { TableHeading } from '@/components/ui/Table';
 import { type PropsWithParams } from '@/lib/types/propsWithParams';
 
-// eslint-disable-next-line import/order
 import { type Params } from '../../params';
 
 type Props = PropsWithParams<Params>;
