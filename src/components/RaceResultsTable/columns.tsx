@@ -42,6 +42,9 @@ export const columns = [
   columnHelper.accessor('FastestLap', {
     cell(ctx) {
       const fastestLap = ctx.getValue<FastestLap>();
+      if (!fastestLap) {
+        return null;
+      }
       const { time } = fastestLap.Time;
       const { rank } = fastestLap;
       const isBestTime = rank === '1';
