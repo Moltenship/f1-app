@@ -1,7 +1,3 @@
 import wretch from 'wretch';
 
-export const api = wretch(process.env.API_URL, {
-  next: {
-    revalidate: 60 * 5,
-  },
-});
+export const api = wretch(process.env.API_URL, { cache: 'no-store' });
